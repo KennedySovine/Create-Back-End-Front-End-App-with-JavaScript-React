@@ -1,32 +1,36 @@
 // All code should be written in this file.
 
-function playerFactory(player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue) {
-    return {
-        player: player,
-        moveOne: {
-            type: moveOneType,
-            value: moveOneValue
-        },
-        moveTwo: {
-            type: moveTwoType,
-            value: moveTwoValue
-        },
-        moveThree: {
-            type: moveThreeType,
-            value: moveThreeValue
-        }
-    }
-}
+// Global variables for player moves
+let playerOneMoveOneType;
+let playerOneMoveOneValue;
+let playerOneMoveTwoType;
+let playerOneMoveTwoValue;
+let playerOneMoveThreeType;
+let playerOneMoveThreeValue;
 
-let playerOne;
-let playerTwo;
+let playerTwoMoveOneType;
+let playerTwoMoveOneValue;
+let playerTwoMoveTwoType;
+let playerTwoMoveTwoValue;
+let playerTwoMoveThreeType;
+let playerTwoMoveThreeValue;
 
 const setPlayerMoves = (player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue) => {
     if (player === 'Player One'){
-        playerOne = playerFactory(player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue);
+        playerOneMoveOneType = moveOneType;
+        playerOneMoveOneValue = moveOneValue;
+        playerOneMoveTwoType = moveTwoType;
+        playerOneMoveTwoValue = moveTwoValue;
+        playerOneMoveThreeType = moveThreeType;
+        playerOneMoveThreeValue = moveThreeValue;
     }
     else if (player === 'Player Two'){
-        playerTwo = playerFactory(player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue);
+        playerTwoMoveOneType = moveOneType;
+        playerTwoMoveOneValue = moveOneValue;
+        playerTwoMoveTwoType = moveTwoType;
+        playerTwoMoveTwoValue = moveTwoValue;
+        playerTwoMoveThreeType = moveThreeType;
+        playerTwoMoveThreeValue = moveThreeValue;
     }
 }
 
@@ -35,16 +39,16 @@ const getRoundWinner = (round) => {
     let p2 = { move: '', value: 0 };
     switch (round){
         case 1:
-            p1 = { move: playerOne.moveOne.type, value: playerOne.moveOne.value };
-            p2 = { move: playerTwo.moveOne.type, value: playerTwo.moveOne.value };
+            p1 = { move: playerOneMoveOneType, value: playerOneMoveOneValue };
+            p2 = { move: playerTwoMoveOneType, value: playerTwoMoveOneValue };
             break;
         case 2:
-            p1 = { move: playerOne.moveTwo.type, value: playerOne.moveTwo.value };
-            p2 = { move: playerTwo.moveTwo.type, value: playerTwo.moveTwo.value };
+            p1 = { move: playerOneMoveTwoType, value: playerOneMoveTwoValue };
+            p2 = { move: playerTwoMoveTwoType, value: playerTwoMoveTwoValue };
             break;
         case 3:
-            p1 = { move: playerOne.moveThree.type, value: playerOne.moveThree.value };
-            p2 = { move: playerTwo.moveThree.type, value: playerTwo.moveThree.value };
+            p1 = { move: playerOneMoveThreeType, value: playerOneMoveThreeValue };
+            p2 = { move: playerTwoMoveThreeType, value: playerTwoMoveThreeValue };
             break;
     }
 
@@ -57,6 +61,20 @@ const getRoundWinner = (round) => {
         }
         return 'Tie';
     }
+    
+    // Handle different move types (rock beats scissors, scissors beats paper, paper beats rock)
+    if ((p1.move === 'rock' && p2.move === 'scissors') ||
+        (p1.move === 'scissors' && p2.move === 'paper') ||
+        (p1.move === 'paper' && p2.move === 'rock')) {
+        return 'Player One';
+    }
+    else if ((p2.move === 'rock' && p1.move === 'scissors') ||
+             (p2.move === 'scissors' && p1.move === 'paper') ||
+             (p2.move === 'paper' && p1.move === 'rock')) {
+        return 'Player Two';
+    }
+    
+    return 'Tie';
 }
 
 const getGameWinner = () => {
