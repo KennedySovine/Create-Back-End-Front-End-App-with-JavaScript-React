@@ -1,0 +1,38 @@
+.BusinessList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  aspect-ratio: 16/9;
+}
+
+.BusinessList .Business {
+  display:flexbox;
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.BusinessList .Business-reviews {
+  display:flexbox;
+}
+
+.BusinessList .Business img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/2;
+}
+
+.BusinessList .Business h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.BusinessList .Business p {
+  font-size: 1em;
+  color: #555;
+  margin: 0 10px 10px;
+  text-align: left;
+}
