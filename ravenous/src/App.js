@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BusinessList } from './components/BusinessList/BusinessList';
+import { SearchBar } from './components/SearchBar/SearchBar';
 
 const businesses = [
   {
@@ -19,8 +20,13 @@ const businesses = [
 
 function App() {
   return (
-    <div className="App">
-      <BusinessList businesses={businesses} />
+    <div>
+      <div className="App-header">
+        <SearchBar />
+      </div>
+      <div className="App">
+        <BusinessList businesses={businesses} />
+      </div>
     </div>
   );
 }
