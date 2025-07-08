@@ -1,0 +1,50 @@
+.Business {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  width: 300px;
+  font-family: Arial, sans-serif;
+}
+
+.Business-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.Business-info {
+  padding: 16px;
+}
+
+.Business-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.Business-address {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.Business-category {
+  color: #b59f3b;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.Business-rating {
+  color: #f5b942;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.Business-reviews {
+  color: #888;
+  font-size: 0.95rem;
+}
