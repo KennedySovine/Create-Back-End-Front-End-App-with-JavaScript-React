@@ -18,16 +18,18 @@ export const Business = () => {
     return (
         <div className="Business">
             <img className="Business-image" src={business.imageSrc} alt={business.name} />
+            <h2 className="Business-name">{business.name}</h2>
             <div className="Business-info">
-                <div className="Business-name">{business.name}</div>
-                <div className="Business-address">
-                    {business.address}<br />
-                    {business.city}<br />
-                    {business.state} {business.zipCode}
-                </div>
-                <span className="Business-category">{business.category}</span>
-                <span className="Business-rating">{business.rating} stars</span>
-                <span className="Business-reviews">{business.reviewCount} reviews</span>
+              <div className="Business-address">
+                {business.address}<br />
+                {business.city}<br />
+                {business.state} {business.zipCode}
+              </div>
+              <div className="Business-details">
+                <p className="Business-category">{business.category.toUpperCase()}</p>
+                <p className="Business-rating">{business.rating} stars</p>
+                <p className="Business-reviews">{business.reviewCount} reviews</p>
+              </div>
             </div>
         </div>
     );
