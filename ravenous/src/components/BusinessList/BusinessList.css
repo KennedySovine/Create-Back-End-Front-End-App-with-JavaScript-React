@@ -1,0 +1,10 @@
+.BusinessList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    justify-items: center;
+    max-width: 1100px;   /* Adjust as needed for your card width and gap */
+    margin: 40px auto;   /* Top/bottom and auto left/right for centering */
+    padding: 0 24px;     /* Optional: adds some padding on small screens */
+    width: 100%;
+}

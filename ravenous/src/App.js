@@ -22,8 +22,9 @@ function App() {
   return (
     <div>
       <div className="App-header">
-        <SearchBar />
+        <h2>ravenous</h2>
       </div>
+      <SearchBar />
       <div className="App">
         <BusinessList businesses={businesses} />
       </div>
