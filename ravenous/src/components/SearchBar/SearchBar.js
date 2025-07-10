@@ -8,7 +8,7 @@ export const SearchBar = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(term, location, sortBy);
+        console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
     };
 
     return (
