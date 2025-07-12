@@ -19,7 +19,7 @@ function App() {
       <div className="App-header">
         <h2>ravenous</h2>
       </div>
-      <SearchBar />
+      <SearchBar  onSearch={handleSearch}/>
       <div className="App">
         <BusinessList businesses={businesses} />
       </div>

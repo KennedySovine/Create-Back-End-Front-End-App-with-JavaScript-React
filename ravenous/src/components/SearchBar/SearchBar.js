@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import './SearchBar.css';
+import { retrieveBusinesses } from '../../utils/yelpAPI';
 
-export const SearchBar = () => {
+export const SearchBar = ({onSearch}) => {
     const [term, setTerm] = useState('');
     const [location, setLocation] = useState('');
     const [sortBy, setSortBy] = useState('best_match');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
+        onSearch(term, location, sortBy);
     };
 
     return (

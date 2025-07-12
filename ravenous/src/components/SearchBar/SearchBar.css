@@ -40,6 +40,19 @@
     
 }
 
+.lets-go:active {
+  background-color: #a67c1a;
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+
+.lets-go:hover {
+  background-color: #b38b2e;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
 .SearchBar-form {
     display: flex;
     flex-direction: column;
