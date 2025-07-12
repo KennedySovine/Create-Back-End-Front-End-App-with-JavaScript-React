@@ -1,8 +1,6 @@
 import React from 'react';
 import './Business.css';
 
-// Remove the hardcoded business object
-
 export const Business = ({ business }) => {
     return (
         <div className="Business">

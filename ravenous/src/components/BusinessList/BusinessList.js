@@ -5,8 +5,8 @@ import './BusinessList.css';
 export const BusinessList = ({ businesses }) => {
     return (
         <div className="BusinessList">
-        {businesses.map((business, index) => (
-            <Business key={index} business={business} />
+        {businesses.map((business)=> (
+            <Business key={business.id} business={business} />
         ))}
         </div>
     );
